@@ -1,7 +1,5 @@
 # 调用该类的方法，用来打印生成日志
 #-------------------数据类型：数字 字符串 List列表 元组 字典--------------
-import time
-
 counter = a1 = 100  # 变量counter是没有类型，她仅仅是一个对象的引用
 name = "John"
 print (counter)

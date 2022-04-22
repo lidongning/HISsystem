@@ -1,6 +1,6 @@
 test_case01 (testcase.test_case01.Testinterfaces) ... ok
 
 ----------------------------------------------------------------------
-Ran 1 test in 0.005s
+Ran 1 test in 0.004s
 
 OK

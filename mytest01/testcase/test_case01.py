@@ -9,8 +9,9 @@ class Testinterfaces(unittest.TestCase):
         print('清理数据！')
 
     def test_case01(self):
-        cell = readExcel().get_xls('../testfile/test_data.xls', 'Sheet1')
-        # 函数function1
+        print('执行第一个用例！')
+        cell = readExcel().get_xls('C:\\My-Files-Dn\\git-code\\mytest01\\testfile\\test_data.xls', 'Sheet1')
+        print(cell[0])
         # function1(cell[0],cell[1])
         self.assertEqual(1, cell[0])  # 加断言
         return
