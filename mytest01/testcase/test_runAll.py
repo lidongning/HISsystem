@@ -7,8 +7,6 @@ cur_path=os.path.dirname(file_path)
 project_path=os.path.dirname(cur_path)
 sys.path.append(project_path)
 from testcase import test_case01
-
-
 def load_by_class():    #通过测试类来添加到测试集当中
     suite = unittest.TestSuite()
     loader= unittest.TestLoader()
@@ -17,8 +15,8 @@ def load_by_class():    #通过测试类来添加到测试集当中
     return suite
 if __name__ == '__main__':
     print('运行所有用例！')
-    runner=unittest.TextTestRunner()
-    file = open('C:\\My-Files-Dn\\git-code\\mytest01\\result\\report.txt', 'w').close()#测试报告清理干净
+    runner=unittest.TextTestRunner()         #为保证在cmd中可运行
+    file = open('C:\\My-Files-Dn\\git-code\\mytest01\\result\\report.txt', 'w').close() #测试报告清理干净
 with open(r'C:\\My-Files-Dn\\git-code\\mytest01\\result\\report.txt', 'a') as report_file:
     runner = unittest.TextTestRunner(stream=report_file, verbosity=2)
     runner.run(load_by_class())
