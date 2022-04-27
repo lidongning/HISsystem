@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" Thread-count="2" name="Suite">
+
+<listeners>
+        <!--失败重试监听器-->
+        <listener class-name="Listener.RetryListener"></listener>
+        <listener class-name="Listener.ResultListener"></listener>
+    </listeners>
+    <test name="TestBaidu1">
+       
+        <classes> 
+            <class name="Baidu.BaiduTest" />
+        </classes>
+  </test>
+   <test name="TestBaidu2">
+        <classes> 
+            <class name="Baidu.BaiduTest2" />
+        </classes>
+  </test> 
+        
+  
+     
+</suite> <!-- Suite -->

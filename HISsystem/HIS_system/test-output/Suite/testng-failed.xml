@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="none">
+  <listeners>
+    <listener class-name="Listener.RetryListener"/>
+    <listener class-name="Listener.ResultListener"/>
+  </listeners>
+  <test name="TestBaidu(failed)" parallel="none">
+    <classes>
+      <class name="Baidu.BaiduTest">
+        <methods>
+          <include name="atest"/>
+          <include name="afterClass"/>
+          <include name="btest"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- Baidu.BaiduTest -->
+    </classes>
+  </test> <!-- TestBaidu(failed) -->
+</suite> <!-- Failed suite [Suite] -->

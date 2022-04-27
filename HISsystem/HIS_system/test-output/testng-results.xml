@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1642" started-at="2022-02-13T06:13:09Z" finished-at="2022-02-13T06:13:11Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1642" started-at="2022-02-13T06:13:09Z" finished-at="2022-02-13T06:13:11Z">
+      <class name="Baidu.MyHttpClient">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:Baidu.MyHttpClient@36d64342]" name="beforeTest" is-config="true" duration-ms="31" started-at="2022-02-13T14:13:09Z" finished-at="2022-02-13T14:13:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="atest()[pri:0, instance:Baidu.MyHttpClient@36d64342]" name="atest" duration-ms="781" started-at="2022-02-13T14:13:09Z" description="get请求" finished-at="2022-02-13T14:13:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- atest -->
+        <test-method status="PASS" signature="btest()[pri:0, instance:Baidu.MyHttpClient@36d64342]" name="btest" duration-ms="518" started-at="2022-02-13T14:13:10Z" description="post请求——Form表单形式(数据格式)" finished-at="2022-02-13T14:13:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- btest -->
+        <test-method status="PASS" signature="ctest()[pri:0, instance:Baidu.MyHttpClient@36d64342]" name="ctest" duration-ms="265" started-at="2022-02-13T14:13:10Z" description="post请求——Json形式(数据格式)" finished-at="2022-02-13T14:13:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ctest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Baidu.MyHttpClient@36d64342]" name="afterTest" is-config="true" duration-ms="0" started-at="2022-02-13T14:13:11Z" finished-at="2022-02-13T14:13:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- Baidu.MyHttpClient -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
