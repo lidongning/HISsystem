@@ -28,10 +28,11 @@ print(back['2'])
 print (back.keys())  #输出所有key
 print (back.values()) #输出所有values
 
-
+print('11',)
 
 #------------------条件语句-----------------------------
 flag=False;a=True
+print('11',a)       #字符串连接后，打印字符串
 if flag:
     print("你好")
 elif a:
