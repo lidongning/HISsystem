@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开发测试小工具</title>
+   <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../static/scripts.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div id="contor" style="width:500px">
+    <h1>欢迎来到新世界</h1>
+    <p>{{name}}:  这是最美、最神秘的大世界，欢迎大家~~~</p>
+</div>
+<div id="container" style="width:500px;margin-top:20px">
+    <form action=" ">
+        用名:<input type="text" name="name" id="name" ><br>
+        密码:<input type="text" name="prd" id="prd" style="margin-top:10px"><br>
+            <input type="text" name="res" id="result" style="margin-top:10px;margin-left:30px"><br>
+    </form>
+    <button type="button" onclick="myFunction1()" style="margin-top:10px;margin-left:30px">提交</button>
+</div>
+<div id="con" style="width:500px;margin-top:20px">
+    <form action=" ">
+        百度1:<input type="text" name="Bai" id="Bai"><br>
+        结果1:<input type="text" name="resu" id="resu" style="margin-top:10px"><br>
+    </form>
+    <button type="button" onclick="Funct01()" style="margin-top:10px;margin-left:30px">查询</button>
+    <script tpye="text/javascript">
+       function Funct01()
+       {
+         $.ajax({
+            url:'/bai_find/',
+            type:'post',
+            data:{'one':$('#Bai').val()},
+            success:function (args){
+                $('#resu').val(args)
+                }
+            })
+         }
+    </script>
+  </div>
+<div id="coni" style="width:500px;margin-top:20px" >
+    <form action=" ">
+        百度2:<input type="text" name="Bai" id="Ba"><br>
+        结果2:<input type="text" name="resu" id="re" style="margin-top:10px"><br>
+    </form>
+    <button type="button" onclick="Funct02()" style="margin-top:10px;margin-left:30px">查询</button>
+    <script tpye="text/javascript">
+       function Funct02()
+       {
+         $.ajax({
+            url:'/content_find/',
+            type:'post',
+            data:{'one':$('#Ba').val()},
+            success:function (args){
+                $('#re').val(args)
+                }
+            })
+         }
+    </script>
+  </div>
+
+</body>
+</html>
