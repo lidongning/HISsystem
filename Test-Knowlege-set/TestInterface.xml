@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.2.3 (Build 903_10_20040U)" ts="2022-06-20 11:47:30">
+<Class name="TestInterface.CommonClass">
+<ClassType/>
+<ProcedureBlock>1</ProcedureBlock>
+<Super>%RegisteredObject</Super>
+<TimeChanged>66280,41339.300305</TimeChanged>
+<TimeCreated>66269,39796.910181</TimeCreated>
+
+<Method name="CommonData">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+     SET ^ResultSucsse=0
+     SET ^ResultFaild=0
+     SET ^PatientID="11"  //登记号=11，呼吸内科门诊=1 （挂的是呼吸内科门诊/呼吸内科普通号）
+     SET ^ASRowId="1747||590"
+     SET ^LocRowid="1"
+	 SET ^DocRowId="352"    //号别：呼吸内科普通号
+	 SET ^user="12131"  //用户登录的session
+	 SET ^group="28"
+	 SET ^FeeStr= "1||1||0||0"  //表示收取诊查费
+	 quit "数据初始化成功"
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[
+// 结果判断：失败或成功   
+
+]]></Content>
+</UDLText>
+
+<Method name="ResultInterface">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>result:%String,name:%String</FormalSpec>
+<Implementation><![CDATA[
+	    
+		 If (result="")
+			{
+				SET ^ResultFaild=^ResultFaild+1
+				quit name_"接口运行失败!"
+				}
+				Else
+				{
+ 				    SET ^ResultSucsse=^ResultSucsse+1
+		    		quit name_"接口运行成功!"
+				}
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="TestInterface.DoctorStation">
+<ClassType/>
+<ProcedureBlock>1</ProcedureBlock>
+<Super>%RegisteredObject</Super>
+<TimeChanged>66280,41082.929084</TimeChanged>
+<TimeCreated>66269,37622.277184</TimeCreated>
+
+<Method name="InterfaceManage">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	w ##class(TestInterface.CommonClass).CommonData()   //数据初始化
+	d ##class(TestInterface.DoctorStation).OrderInterface()
+]]></Implementation>
+</Method>
+
+<Method name="OrderInterface">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	S re1= ##class(web.DHCOPAdmReg).CheckRegDeptAgeSex("",$Get(^PatientID),$Get(^PatientID))
+	w ##class(TestInterface.CommonClass).ResultInterface(re1,"CheckRegDeptAgeSex")
+	S re2= ##class(web.DHCOPAdmReg).GetRapidASRowId($Get(^PatientID),$Get(^user),"","","",$Get(^DocRowId))
+    S re3=##class(web.DHCOPAdmReg).OPDocRapidRegistBroker($Get(^PatientID),$Get(^ASRowId),"",$Get(^FeeStr),$Get(^user),$Get(^group),$Get(^LocRowid),$Get(^DocRowId),"","","")
+	w ##class(TestInterface.CommonClass).ResultInterface(re3,"OPDocRapidRegistBroker")
+]]></Implementation>
+</Method>
+</Class>
+
+
+</Export>
