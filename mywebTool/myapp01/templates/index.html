@@ -18,11 +18,25 @@
 </div>
 <div id="container" style="width:500px;margin-top:20px">
     <form action=" ">
-        用名:<input type="text" name="name" id="name" ><br>
-        密码:<input type="text" name="prd" id="prd" style="margin-top:10px"><br>
-            <input type="text" name="res" id="result" style="margin-top:10px;margin-left:30px"><br>
+        变量1:<input type="text" name="name" id="name" ><br>
+        变量2:<input type="text" name="prd" id="prd" style="margin-top:10px"><br>
+        结果是:<input type="text" name="res" id="result" style="margin-top:10px"><br>
     </form>
     <button type="button" onclick="myFunction1()" style="margin-top:10px;margin-left:30px">提交</button>
+   <script tpye="text/javascript">
+       function myFunction1()
+       {
+         $.ajax({
+            url:'/ajax_add/',
+            type:'post',
+            data:{'one':$('#name').val(),
+                  'two':$('#prd').val()},
+            success:function (args){
+                $('#result').val(args)
+                }
+            })
+         }
+    </script>
 </div>
 <div id="con" style="width:500px;margin-top:20px">
     <form action=" ">
@@ -44,23 +58,16 @@
          }
     </script>
   </div>
-<div id="coni" style="width:500px;margin-top:20px" >
+<div id="con0" style="width:500px;margin-top:20px" >
     <form action=" ">
-        百度2:<input type="text" name="Bai" id="Ba"><br>
-        结果2:<input type="text" name="resu" id="re" style="margin-top:10px"><br>
+        百度2:<input type="text" name="AA" id="AA"><br>
+        结果2:<input type="text" name="BB" id="BB" style="margin-top:10px"><br>
     </form>
-    <button type="button" onclick="Funct02()" style="margin-top:10px;margin-left:30px">查询</button>
+    <button type="button" onclick="testfunction()" style="margin-top:10px;margin-left:30px">查询</button>
     <script tpye="text/javascript">
-       function Funct02()
+       function testfunction()
        {
-         $.ajax({
-            url:'/content_find/',
-            type:'post',
-            data:{'one':$('#Ba').val()},
-            success:function (args){
-                $('#re').val(args)
-                }
-            })
+        alert('你好');
          }
     </script>
   </div>
